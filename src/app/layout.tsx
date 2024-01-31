@@ -1,6 +1,11 @@
+import cn from "classnames";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "../common/styles/globals.css";
+
+import { Divider } from "@/components/common/Divider/Divider";
+import { Header } from "@/components/layout/Header/Header";
+import { QueryProvider } from "@/components/layout/QueryProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +21,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body
+        className={cn(
+          inter.className,
+          "text-black bg-white dark:text-white dark:bg-black",
+        )}
+      >
+        <div className="py-[43px] px-[100px] gap-">
+          <Header />
+          <div className="mt-[42px] mb-[82px] w-full">
+            <Divider />
+          </div>
+          <QueryProvider>{children}</QueryProvider>
+        </div>
+      </body>
     </html>
   );
 }

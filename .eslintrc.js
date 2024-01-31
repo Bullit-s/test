@@ -5,20 +5,20 @@ module.exports = {
     "@typescript-eslint",
     "prettier",
     "simple-import-sort",
-    "unused-imports"
+    "unused-imports",
   ],
   parser: "@typescript-eslint/parser",
   parserOptions: {
     ecmaVersion: 2018,
     sourceType: "module",
     ecmaFeatures: {
-      jsx: true
-    }
+      jsx: true,
+    },
   },
   settings: {
     react: {
-      version: "detect"
-    }
+      version: "detect",
+    },
   },
   extends: [
     "eslint:recommended",
@@ -27,13 +27,14 @@ module.exports = {
     "plugin:react-hooks/recommended",
     "plugin:jsx-a11y/recommended",
     "plugin:prettier/recommended",
-    'plugin:@next/next/recommended'
+    "plugin:@next/next/recommended",
   ],
   rules: {
     "react/prop-types": "off",
     "react/display-name": "off",
     "react/no-unescaped-entities": "off",
     "react/react-in-jsx-scope": "off",
+    "react/jsx-curly-brace-presence": "warn",
     "no-unused-vars": "off",
     "no-use-before-define": "off",
     "@typescript-eslint/semi": ["warn"],
@@ -50,12 +51,13 @@ module.exports = {
     "@typescript-eslint/no-empty-interface": [
       "error",
       {
-        allowSingleExtends: true
-      }
+        allowSingleExtends: true,
+      },
     ],
     "simple-import-sort/exports": "error",
     "prettier/prettier": "error",
     "prefer-template": "warn",
+    "no-undef": "off",
     "no-extra-boolean-cast": "warn",
     "no-empty-pattern": "warn",
     "no-unsafe-optional-chaining": "warn",
@@ -86,7 +88,12 @@ module.exports = {
     "unused-imports/no-unused-imports": "error",
     "unused-imports/no-unused-vars": [
       "warn",
-      { vars: "all", varsIgnorePattern: "^_", args: "after-used", argsIgnorePattern: "^_" }
+      {
+        vars: "all",
+        varsIgnorePattern: "^_",
+        args: "after-used",
+        argsIgnorePattern: "^_",
+      },
     ],
     "simple-import-sort/imports": [
       "warn",
@@ -103,10 +110,10 @@ module.exports = {
             "^\\./(?=.*/)(?!/?$)",
             "^\\.(?!/?$)",
             "^\\./?$",
-            "^.+\\.s?css$"
-          ]
-        ]
-      }
-    ]
-  }
+            "^.+\\.s?css$",
+          ],
+        ],
+      },
+    ],
+  },
 };
